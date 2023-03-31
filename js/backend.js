@@ -67,17 +67,17 @@ startLab.onclick = function() {
             let time_passed = Date.now() - time_start;
             // вычисляем и меняем координату блока (и веревки) для каждого момента времени
             calculate_y(time_passed / 1000);
-            draw_result(y, time_passed);
+            draw_result(y, time_passed / 1000);
             
             // как только блок оказался на земле выходим
             if (y >= maxHeight) {
                 y = maxHeight;
-                stopLab(time_passed);
+                stopLab(time_passed / 1000);
                 return;
             }
             else if (y <= 50) {
                 y = 50;
-                stopLab(time_passed);
+                stopLab(time_passed / 1000);
                 return;
             }
         }, 20);
@@ -87,7 +87,7 @@ startLab.onclick = function() {
 function stopLab(time_passed) {
     labEnd = true;
     startDeg = deg;
-    draw_result(y, time_passed);
+    draw_result(y, time_passed + Math.random() / 4 - 0.125);
     clearInterval(timer);
     startLabButton();
 }
@@ -104,8 +104,6 @@ function setup() {
         acceleration = ((js_weight_m0 - js_weight_m1) * gravitation + blockFriction) / (js_weight_m0 + js_weight_m1 + pulleyInertion);
     else
         acceleration = ((js_weight_m0 - js_weight_m1) * gravitation - blockFriction) / (js_weight_m0 + js_weight_m1 + pulleyInertion);
-
-    angleAcceleration = acceleration / js_radius;
     
     // Проверочное время
     //test.innerHTML = Math.sqrt(Math.abs( 2 * js_height / acceleration));
@@ -114,8 +112,6 @@ function setup() {
 function reset_values() {
     y = minHeight;
 }
-
-
 
 function check_incorrect_input() {
     if (js_height == '' || js_height == undefined) {
@@ -168,7 +164,7 @@ function draw_result(y, time_passed) {
     block_m0.style.top = y + 'px';
     block_m1.style.top = 2 * minHeight - y + 'px';
 
-    lab_time.innerHTML = 'Время : ' + Number(time_passed / 1000).toFixed(2) + ' секунд';
+    lab_time.innerHTML = 'Время : ' + Number(time_passed).toFixed(2) + ' секунд';
 }
 
 height.onblur = function() {
