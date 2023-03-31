@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/4445/4445241.png" type="image/x-icon">
+
+    <title>Машина Атвуда</title>
+</head>
+<body>
+    
+    <header>
+        <div class="container pt-5">
+            <div class="row">
+                <div class="col">
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                  <h1>Машина Атвуда</h1>  
+                  <hr>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <section>
+        <div class="container">
+            <div class="row mt-4 mb-5">
+                <div class="col-lg-6 col-12 border-end mb-5">
+                    <div class="hp-title">
+                        <h3>Ввод данных для расчета</h3>
+                    </div>
+
+                        <!--
+
+                            <div class="alert alert-warning d-flex align-items-center visually-hidden mt-4" id="radius_alert" role="alert">
+                                <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Warning:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+                                <div>
+                                    Неверный радиус!
+                                </div>
+                            </div>
+                            
+                            <div class="mt-3">Радиус шкива в сантиметрах (R)</div>
+                            <input class="form-control w-75" id="radius">
+                        -->
+
+
+
+                        <div class="alert alert-warning d-flex align-items-center visually-hidden mt-4" id="height_alert" role="alert">
+                            <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Warning:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+                            <div>
+                                Неверная высота падения груза!
+                            </div>
+                        </div>
+
+                        <div class="mt-3">Высота падения груза в сантиметрах (h)</div>
+                        <input class="form-control w-75" id="height">
+
+
+
+
+
+                        <div class="alert alert-warning d-flex align-items-center visually-hidden mt-4" id="weight_m0_alert" role="alert">
+                            <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Warning:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+                            <div>
+                                Неверная масса!
+                            </div>
+                        </div>
+
+                        <div class="mt-3">Масса левого груза в граммах (m<sub>0</sub>)</div>
+                        <input class="form-control w-75" id="weight_m0">
+                        
+
+
+
+
+                        <div class="alert alert-warning d-flex align-items-center visually-hidden mt-4" id="weight_m1_alert" role="alert">
+                            <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Warning:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+                            <div>
+                                Неверная масса!
+                            </div>
+                        </div>
+
+                        <div class="mt-3">Масса правого груза в граммах(m<sub>1</sub>)</div>
+                        <input class="form-control w-75" id="weight_m1">
+                        
+                        
+                        <button type="button" class="btn btn-success mt-3" id="startLab">Провести опыт</button>
+                </div>
+                <div class="col-lg-6 col-12 ps-lg-5">
+
+                    <h3>Установка</h3>
+                    <div class="pendulum mt-5">
+                        <div class="circle" id="circle">
+                            
+                            <div class="pendulum-rope" id="rope_0"></div>
+                            <div class="pendulum-rope" id="rope_1"></div>
+
+                            <div class="pendulum-block" id="block_m0"></div>
+                            <div class="pendulum-block" id="block_m1"></div>
+                        </div>
+                    </div>
+
+                    <div class="time-head mt-4">
+                        <div class="alert alert-success" id="lab_time" role="alert">Время : 0 секунд</div>
+                    </div>
+                    <div>
+                        <div id="test"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="bg2 text-color1 p-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    Design and developer: Happy Crez / Владимир Горбунов ПИ-24
+                </div>
+            </div>
+        </div>
+    </section>
+
+<script src="js/backend.js"></script>
+<script src="js/bootstrap.bundle.min.js"></script>
+
+
+
+</body>
+</html>

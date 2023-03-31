@@ -1,0 +1,91 @@
+:root{
+    --main_light_color: #fff;
+    --main_deep_color: #000;
+    --blocks_color: #020e76; 
+
+    --height: 205px;
+}
+body{
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    background-color: #fff;
+}
+
+.bg1{
+    background-color: var(--main_light_color);
+}
+
+.bg2{
+    background-color: var(--main_deep_color);
+}
+
+.text-color1{
+    color: var(--main_light_color);
+}
+
+.text-color2{
+    color: var(--main_deep_color);
+}
+
+.pendulum{
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #fff;
+    width: 200px;
+    height: 405px;
+    padding-top : 20px;
+    display: flex;
+    justify-content: center;
+    
+    border-bottom: 3px solid var(--main_deep_color);
+}
+
+.circle{
+    background-color: #fff;
+    border: 2px solid var(--main_deep_color);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: relative;
+}
+
+
+.pendulum-rope{
+    position: absolute;
+    width: 2px;
+    height: var(--height);
+    top: 45%;
+    background-color: var(--main_deep_color);
+}
+
+#rope_0{
+    left: -2px;
+}
+
+#rope_1{
+    right: -2px;
+}
+
+.pendulum-block{
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    top: var(--height);
+    background-color: var(--main_deep_color);
+}
+
+#block_m0{
+    left: -11px;
+}
+
+#block_m1{
+    right: -11px;
+}
+
+@keyframes rotate {
+    100%{
+        transform: rotate(360deg);
+    }
+}
