@@ -7,7 +7,7 @@ let js_weight_m1;
 
 let acceleration;
 let angleAcceleration;
-let pulleyInertion = 0.3;
+let effectivePulleyWeight = 0.3;
 
 const gravitation = 9.806;
 const blockFriction = 0.01;
@@ -31,6 +31,12 @@ let y;
 let labEnd = true;
 
 let timer;
+
+let timer_1_error_rate;
+let timer_2_error_rate;
+let timer_3_error_rate;
+let timer_4_error_rate;
+let timer_5_error_rate;
 
 // По нажатию на кнопку проводится опыт
 startLab.onclick = function() {
@@ -87,7 +93,7 @@ startLab.onclick = function() {
 function stopLab(time_passed) {
     labEnd = true;
     startDeg = deg;
-    draw_result(y, time_passed + Math.random() / 4 - 0.125);
+    draw_result(y, time_passed);
     clearInterval(timer);
     startLabButton();
 }
@@ -96,21 +102,22 @@ function stopLab(time_passed) {
 function setup() {
     ratioHeight = js_height / (maxHeight - minHeight);
 
-    //acceleration = ( (js_weight_m1 * gravitation - blockFriction) * Math.pow(js_radius_effective, 2) ) / (pulleyInertion + Math.pow(js_radius_effective, 2) * js_weight_m1 );
     if ( Math.abs((js_weight_m0 - js_weight_m1) * gravitation) < blockFriction)
         acceleration = 0;
     else
     if ((js_weight_m0 - js_weight_m1) * gravitation < 0)
-        acceleration = ((js_weight_m0 - js_weight_m1) * gravitation + blockFriction) / (js_weight_m0 + js_weight_m1 + pulleyInertion);
+        acceleration = ((js_weight_m0 - js_weight_m1) * gravitation + blockFriction) / (js_weight_m0 + js_weight_m1 + effectivePulleyWeight);
     else
-        acceleration = ((js_weight_m0 - js_weight_m1) * gravitation - blockFriction) / (js_weight_m0 + js_weight_m1 + pulleyInertion);
-    
-    // Проверочное время
-    //test.innerHTML = Math.sqrt(Math.abs( 2 * js_height / acceleration));
+        acceleration = ((js_weight_m0 - js_weight_m1) * gravitation - blockFriction) / (js_weight_m0 + js_weight_m1 + effectivePulleyWeight);
 }
 
 function reset_values() {
     y = minHeight;
+    timer_1_error_rate = Math.random() / 4 - 0.125;
+    timer_2_error_rate = Math.random() / 4 - 0.125;
+    timer_3_error_rate = Math.random() / 4 - 0.125;
+    timer_4_error_rate = Math.random() / 4 - 0.125;
+    timer_5_error_rate = Math.random() / 4 - 0.125;
 }
 
 function check_incorrect_input() {
@@ -164,7 +171,22 @@ function draw_result(y, time_passed) {
     block_m0.style.top = y + 'px';
     block_m1.style.top = 2 * minHeight - y + 'px';
 
-    lab_time.innerHTML = 'Время : ' + Number(time_passed).toFixed(2) + ' секунд';
+    //lab_time.innerHTML = 'Время : ' + Number(time_passed).toFixed(2) + ' секунд';
+    if (time_passed + timer_1_error_rate >= 0) {
+        timer_1.innerHTML = Number(time_passed + timer_1_error_rate).toFixed(2) + 'c.';
+    }
+    if (time_passed + timer_2_error_rate >= 0) {
+        timer_2.innerHTML = Number(time_passed + timer_2_error_rate).toFixed(2) + 'c.';
+    }
+    if (time_passed + timer_3_error_rate >= 0) {
+        timer_3.innerHTML = Number(time_passed + timer_3_error_rate).toFixed(2) + 'c.';
+    }
+    if (time_passed + timer_4_error_rate >= 0) {
+        timer_4.innerHTML = Number(time_passed + timer_4_error_rate).toFixed(2) + 'c.';
+    }
+    if (time_passed + timer_5_error_rate >= 0) {
+        timer_5.innerHTML = Number(time_passed + timer_5_error_rate).toFixed(2) + 'c.';
+    }
 }
 
 height.onblur = function() {
