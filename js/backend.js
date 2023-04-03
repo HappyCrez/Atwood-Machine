@@ -36,7 +36,6 @@ let timer_1_error_rate;
 let timer_2_error_rate;
 let timer_3_error_rate;
 let timer_4_error_rate;
-let timer_5_error_rate;
 
 // По нажатию на кнопку проводится опыт
 startLab.onclick = function() {
@@ -117,7 +116,6 @@ function reset_values() {
     timer_2_error_rate = Math.random() / 4 - 0.125;
     timer_3_error_rate = Math.random() / 4 - 0.125;
     timer_4_error_rate = Math.random() / 4 - 0.125;
-    timer_5_error_rate = Math.random() / 4 - 0.125;
 }
 
 function check_incorrect_input() {
@@ -183,9 +181,6 @@ function draw_result(y, time_passed) {
     }
     if (time_passed + timer_4_error_rate >= 0) {
         timer_4.innerHTML = Number(time_passed + timer_4_error_rate).toFixed(2) + 'c.';
-    }
-    if (time_passed + timer_5_error_rate >= 0) {
-        timer_5.innerHTML = Number(time_passed + timer_5_error_rate).toFixed(2) + 'c.';
     }
 }
 
