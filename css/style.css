@@ -28,6 +28,24 @@ body{
     color: var(--main_deep_color);
 }
 
+.header_info {
+    display: flex;
+    align-self: center;
+}
+
+.headerTitle {
+    width: 70%;
+}
+
+.instructionBtn {
+    width: 30%;
+    text-align: right;
+}
+
+.table{
+    max-width: 800px;
+}
+
 .pendulum{
     position: relative;
     margin-left: auto;
