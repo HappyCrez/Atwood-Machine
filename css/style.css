@@ -30,6 +30,7 @@ body{
 
 .header_info {
     display: flex;
+    margin: 0 15px;
     align-self: center;
 }
 
