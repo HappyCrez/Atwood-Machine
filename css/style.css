@@ -45,6 +45,7 @@ body{
 
 .table{
     max-width: 800px;
+    table-layout: fixed;
 }
 
 .pendulum{

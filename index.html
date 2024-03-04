@@ -14,7 +14,7 @@
     <header>
         <div class="container pt-5">
             <div class="row">
-                <div class="col">
+                <div class="col-12">
                     <div class="header_info">
                         <div class="headerTitle">
                             <h1>Машина Атвуда</h1> 
@@ -97,38 +97,14 @@
                         <h3>Ввод данных для расчета</h3>
                     </div>
 
-                        <div class="alert alert-warning d-flex align-items-center visually-hidden mt-4" id="height_alert" role="alert">
-                            <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Warning:"><use xlink:href="#exclamation-triangle-fill"/></svg>
-                            <div>
-                                Неверная высота падения груза!
-                            </div>
-                        </div>
-
                         <div class="mt-3">Высота падения груза в сантиметрах (h)</div>
-                        <input class="form-control w-75" id="height">
-
-
-                        <div class="alert alert-warning d-flex align-items-center visually-hidden mt-4" id="weight_m0_alert" role="alert">
-                            <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Warning:"><use xlink:href="#exclamation-triangle-fill"/></svg>
-                            <div>
-                                Неверная масса!
-                            </div>
-                        </div>
+                        <input maxlength="3" class="form-control w-75" id="height">
 
                         <div class="mt-3">Масса левого груза в граммах (m<sub>1</sub>)</div>
-                        <input class="form-control w-75" id="weight_m0">
+                        <input maxlength="3" class="form-control w-75" id="weight_m0">
                         
-
-                        <div class="alert alert-warning d-flex align-items-center visually-hidden mt-4" id="weight_m1_alert" role="alert">
-                            <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Warning:"><use xlink:href="#exclamation-triangle-fill"/></svg>
-                            <div>
-                                Неверная масса!
-                            </div>
-                        </div>
-
                         <div class="mt-3">Масса правого груза в граммах(m<sub>2</sub>)</div>
-                        <input class="form-control w-75" id="weight_m1">
-                        
+                        <input maxlength="3" class="form-control w-75" id="weight_m1">
                         
                         <button type="button" class="btn btn-success mt-3" id="startLab">Провести опыт</button>
                 </div>
@@ -154,10 +130,10 @@
                             <td>t<sub>4</sub></td>
                         </tr>
                         <tr>
+                            <td id="timer_0">0c.</td>
                             <td id="timer_1">0c.</td>
                             <td id="timer_2">0c.</td>
                             <td id="timer_3">0c.</td>
-                            <td id="timer_4">0c.</td>
                         </tr>
                     </table>
                     <div>
@@ -182,10 +158,9 @@
         </div>
     </footer>
 
+<script src="js/instruction.js"></script>
 <script src="js/backend.js"></script>
 <script src="js/bootstrap.bundle.min.js"></script>
-
-
 
 </body>
 </html>
