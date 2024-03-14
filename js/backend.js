@@ -144,5 +144,5 @@ const weight_m0 = document.getElementById('weight_m0');     weight_m0.addEventLi
 const weight_m1 = document.getElementById('weight_m1');     weight_m1.addEventListener('input', onlyDigits);
 
 function setHeight()    { height_val = parseInt(height.value) / 100; }
-function setWeightM0()  { weight_m0_val = Number(weight_m0.value) / 1000; }
-function setWeightM1()  { weight_m1_val = Number(weight_m1.value) / 1000; }
+function setWeightM0()  { weight_m0_val = parseInt(weight_m0.value) / 1000; }
+function setWeightM1()  { weight_m1_val = parseInt(weight_m1.value) / 1000; }
